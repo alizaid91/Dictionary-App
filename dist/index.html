@@ -4,11 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
-<body class="bg-slate-600">
+<body class="font-['Babas Neue'] bg-[#836FFF] w-screen h-screen flex justify-center items-center">
+    <div class="container w-auto">
+        <div>
+            <h1 class="text-[#19133f] font-['Babas Neue'] text-[3.5rem] font-bold">Word Wizard</h1>
+        </div>
+        <div class= "flex flex-col items-center">
+            <input class="p-[0.7rem] rounded-3xl text-center" id="searchInput" type="text" placeholder="Type a Word...">
+            <button class="bg-[#15F5BA] w-[100px] p-[8px] mt-3 rounded-3xl hover:bg-[#50756b] transition-colors text-lg font-bold" onclick="search()">Search</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 
 </html>
