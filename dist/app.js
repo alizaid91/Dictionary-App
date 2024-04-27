@@ -1,7 +1,11 @@
 function search() {
   const searchInput = document.getElementById("searchInput").value;
   // Redirect to the meaning page with the word as a parameter
-  window.location.href = `meaning.html?word=${searchInput}`;
+  if (searchInput != "") {
+    window.location.href = `meaning.html?word=${searchInput}`;
+  } else {
+    alert("Enter Word!");
+  }
 }
 
 // Extract the word parameter from the URL
@@ -23,8 +27,7 @@ fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
       meaningDiv.innerHTML = `
           <h2>${word}</h2>
           <p>Part of speech: ${data[0].meanings[0].partOfSpeech}</p>
-          <p>Definition: ${data[0].meanings[0].definitions[0].definition}</p>
-        `;
+          <p>Definition: ${data[0].meanings[0].definitions[0].definition}</p>`;
 
       // Check if audio exists
       if (data[0].phonetics && data[0].phonetics[0].audio) {
