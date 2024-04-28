@@ -624,6 +624,18 @@ video {
   height: 90vh;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.h-\[100vh\] {
+  height: 100vh;
+}
+
+.h-\[80vh\] {
+  height: 80vh;
+}
+
 .w-auto {
   width: auto;
 }
@@ -672,12 +684,20 @@ video {
   overflow-x: auto;
 }
 
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
 .overflow-x-scroll {
   overflow-x: scroll;
 }
 
 .overflow-y-scroll {
   overflow-y: scroll;
+}
+
+.overscroll-y-none {
+  overscroll-behavior-y: none;
 }
 
 .rounded-3xl {
@@ -762,6 +782,10 @@ video {
 
 .pr-2 {
   padding-right: 0.5rem;
+}
+
+.pr-3 {
+  padding-right: 0.75rem;
 }
 
 .text-center {

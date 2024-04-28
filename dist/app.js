@@ -27,7 +27,7 @@ fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
         meaningDiv.innerText = "No definitions found for the word.";
       } else {
         // Insert HTML content for the first three meanings
-        meaningDiv.innerHTML = `<div class="pl-2 pr-2 ml-5 mt-5 w-auto flex flex-row items-center gap-2 overflow-x-scroll">
+        meaningDiv.innerHTML = `<div class="pr-3 ml-5 mt-5 w-auto flex flex-row items-center gap-2 overflow-x-scroll">
         <i class="fa-solid fa-volume-high text-2xl text-white bg-blue-700 p-1.5 rounded-full" id="audio-icon" onclick="playWord()"></i>
         <h1 class="font-extrabold text-4xl tracking-wider">${word}</h1>
         <span class="text-2xl font-bold text-gray-700">${data[0].meanings[0].partOfSpeech}</span>
