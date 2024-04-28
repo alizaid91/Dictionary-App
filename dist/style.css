@@ -688,6 +688,10 @@ video {
   overflow-y: auto;
 }
 
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
 .overflow-x-scroll {
   overflow-x: scroll;
 }
@@ -750,6 +754,11 @@ video {
 .bg-\[\#918ac0\] {
   --tw-bg-opacity: 1;
   background-color: rgb(145 138 192 / var(--tw-bg-opacity));
+}
+
+.bg-red-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
 
 .p-1 {
