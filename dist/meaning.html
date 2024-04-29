@@ -17,12 +17,56 @@
 
 <style>
     .overflow-x-scroll::-webkit-scrollbar {
-    display: none;
-}
+        display: none;
+    }
+
+    .transition-opacity {
+        transition-property: opacity;
+        transition-duration: 1.5s;
+        transition-timing-function: ease;
+    }
+
+    .corner {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+    }
+
+    .top-left {
+        top: 0;
+        left: 0;
+        clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+    }
+
+    .top-right {
+        top: 0;
+        right: 0;
+        clip-path: polygon(100% 0%, 100% 100%, 0% 0%);
+    }
+
+    .bottom-left {
+        bottom: 0;
+        left: 0;
+        clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+    }
+
+    .bottom-right {
+        bottom: 0;
+        right: 0;
+        clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+    }
 </style>
 
-<body class="overflow-y-scroll font-[Roboto] w-screen h-[80vh] flex flex-col gap-6 items-center ">
-    <div class="w-full flex flex-col justify-center" id="meaning"></div>
+<body
+    class=" md:bg-slate-400 font-[Roboto] w-screen flex flex-col items-center overflow-x-hidden scroll-smooth transition-opacity opacity-0">
+    <div class="pb-20 md:max-w-full ml-5 mr-5">
+        <div class="flex justify-center mb-5" id="word-name">
+        </div>
+        <div class="flex flex-col md:flex-row gap-5 md:flex-wrap" id="meaning-ontainer">
+        </div>
+    </div>
+    <footer class="bg-blue-500 text-slate-950 w-screen text-center p-2 font-extrabold text-xl fixed bottom-0 left-0">
+        Developed By Ali Zaid</footer>
     <audio id="audioPlayer"></audio>
     <script src="app.js"></script>
 </body>
