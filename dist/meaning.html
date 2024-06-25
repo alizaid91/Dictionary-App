@@ -55,15 +55,31 @@
         right: 0;
         clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
     }
+
+    a{
+        font-size: 16px;
+        color: rgb(53, 53, 53);
+    }
+
+    a:hover{
+        text-decoration: underline;
+    }
+
+    i{
+        cursor: pointer;
+        transition: scale 0.15s;
+    }
+
+    i:active{
+        scale: 0.9;
+    }
 </style>
 
 <body
     class=" md:bg-slate-400 font-[Roboto] w-screen flex flex-col items-center overflow-x-hidden scroll-smooth transition-opacity opacity-0">
     <div class="pb-20 md:max-w-full ml-5 mr-5">
-        <div class="flex justify-center mb-5" id="word-name">
-        </div>
-        <div class="flex flex-col md:flex-row gap-5 md:flex-wrap" id="meaning-ontainer">
-        </div>
+        <div class="flex justify-center mb-5" id="word-name"></div>
+        <div class="flex flex-col md:flex-row gap-5 md:flex-wrap" id="meaning-ontainer"></div>
     </div>
     <footer class="bg-blue-500 text-slate-950 w-screen text-center p-2 font-extrabold text-xl fixed bottom-0 left-0">
         Developed By Ali Zaid</footer>
