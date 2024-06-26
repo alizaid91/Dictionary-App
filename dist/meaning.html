@@ -73,13 +73,36 @@
     i:active{
         scale: 0.9;
     }
+
+    #meaning-ontainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2rem;
+        margin: 0 2rem;
+        row-gap: 2rem;
+    }
+
+    .meaning-div{
+        transition: scale 0.15s;
+    }
+
+    .meaning-div:hover{
+        scale: 1.1;
+        z-index: 999;
+    }
+
+    @media screen and (max-width:770px){
+        #meaning-ontainer{
+            grid-template-columns: 1fr;
+        }
+    }
 </style>
 
 <body
     class=" md:bg-slate-400 font-[Roboto] w-screen flex flex-col items-center overflow-x-hidden scroll-smooth transition-opacity opacity-0">
     <div class="pb-20 md:max-w-full ml-5 mr-5">
-        <div class="flex justify-center mb-5" id="word-name"></div>
-        <div class="flex flex-col md:flex-row gap-5 md:flex-wrap" id="meaning-ontainer"></div>
+        <div class="flex justify-center mb-5 mt-5" id="word-name"></div>
+        <div id="meaning-ontainer"></div>
     </div>
     <footer class="bg-blue-500 text-slate-950 w-screen text-center p-2 font-extrabold text-xl fixed bottom-0 left-0">
         Developed By Ali Zaid</footer>

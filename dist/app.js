@@ -16,6 +16,7 @@ let meaningContainer = document.querySelector("#meaning-ontainer");
 // Extract the word parameter from the URL
 const urlParams = new URLSearchParams(window.location.search);
 const word = urlParams.get("word");
+const wikiUrl = `https://en.wikipedia.org/wiki/${word}`
 
 // Fetch meaning from API
 fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
@@ -26,26 +27,25 @@ fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
       wordName.innerText = "No definitions found for the word.";
     } else {
       // Insert HTML content for the first three meanings
-      wordName.innerHTML = `<div class="hello pr-3 ml-1 mt-5 w-auto flex flex-row items-center gap-2 overflow-x-scroll">
-        <i class="fa-solid fa-volume-high text-xs text-white bg-blue-700 p-2 rounded-full" id="audio-icon" onclick="playWord()"></i>
-        <h1 class="font-extrabold text-3xl tracking-wider md:text-black">${word}</h1>
-        <span class="text-2xl font-bold text-gray-700 md:text-slate-700">${data[0].meanings[0].partOfSpeech}</span>
+      wordName.innerHTML = `<div class="hello pr-3 ml-1 w-auto flex flex-row items-center gap-2 overflow-x-scroll justify-center h-full">
+        <i class="fa-solid fa-volume-high text-xs text-white bg-blue-700 p-2 rounded-full h-full" id="audio-icon" onclick="playWord()"></i>
+        <h1 class="font-extrabold text-3xl tracking-wider md:text-black h-full">${word}</h1>
+        <span class="text-2xl font-bold text-gray-700 md:text-slate-700 h-full">${data[0].meanings[0].partOfSpeech}</span>
+        <a href="${wikiUrl}" target="_blank" class="h-full">Wikipedia</a>
       </div>`;
       const meaning = data[0].meanings[0].definitions;
       const meaningNew = meaning.filter((meanin) => meanin.example || meanin.definition);
-      const wikiUrl = `https://en.wikipedia.org/wiki/${word}`
       // console.log(meaning)
       // console.log(meaningNew)
       let defNum = 0;
       for (let i = 0; i < meaningNew.length; i++) {
         defNum++;
         meaningContainer.innerHTML += `
-            <div class="relative bg-slate-200 p-6 rounded-xl shadow-xl md:max-w-[400px] min-w-[300px]">
+            <div class="meaning-div relative bg-slate-200 p-6 rounded-xl shadow-xl md:max-w-[400px] min-w-[300px]">
             <p class="font-extrabold text-blue-700">Defination ${defNum}:</p>
             <p class="mb-3 text-[1rem] font-semibold tracking-wide">${meaningNew[i].definition}</p>
             <p class="font-extrabold text-blue-700">${meaningNew[i].example ? 'Example:' : ''}</p>
             <p class="text-[1rem] font-semibold tracking-wide">${meaningNew[i].example ? meaningNew[i].example : ''}</p>
-            <a href="${wikiUrl}" target="_blank" >Wikipedia</a>
             <div class="corner top-left bg-red-500 rounded-tl-xl"></div>
             <div class="corner top-right bg-blue-500 rounded-tr-xl"></div>
             <div class="corner bottom-left bg-green-500 rounded-bl-xl"></div>
